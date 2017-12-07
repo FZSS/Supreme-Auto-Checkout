@@ -23,11 +23,12 @@ export function getOrCreateNotificationBar() {
 }
 
 export function notify(text, danger = false) {
-  const notificationBar = getOrCreateNotificationBar();
-  if (danger) {
-    notificationBar.style.backgroundColor = 'rgba(255, 58, 58, 0.42)';
-  } else {
-    notificationBar.style.backgroundColor = 'rgba(58, 255, 91, 0.42)';
-  }
-  notificationBar.textContent = text;
+  console.log(text);
+  // const notificationBar = getOrCreateNotificationBar();
+  // if (danger) {
+  //   notificationBar.style.backgroundColor = 'rgba(255, 58, 58, 0.42)';
+  // } else {
+  //   notificationBar.style.backgroundColor = 'rgba(58, 255, 91, 0.42)';
+  // }
+  // notificationBar.textContent = text;
 }

@@ -22,18 +22,20 @@ export default class CheckoutProcessor extends BaseProcessor {
     const checkoutDelay = this.preferences.checkoutDelay;
     const inputs = [...document.querySelectorAll('input, textarea, select')]
       .filter(x => ['hidden', 'submit', 'button', 'checkbox'].indexOf(x.type) === -1);
-    CheckoutService.processFields(inputs, this.billing);
-    const terms = document.querySelector('.terms');
-    if (terms) terms.click();
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    if (checkboxes.length) checkboxes[checkboxes.length - 1].checked = true;
-    if (this.preferences.autoPay) {
-      timeout(() => {
-        const commitBtn = document.getElementsByName('commit')[0];
-        if (commitBtn) {
-          commitBtn.click();
-        }
-      }, checkoutDelay, 'Checking out');
-    }
+    console.log(inputs);
+    console.log(this.billing);
+  //   CheckoutService.processFields(inputs, this.billing);
+  //   const terms = document.querySelector('.terms');
+  //   if (terms) terms.click();
+  //   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  //   if (checkboxes.length) checkboxes[checkboxes.length - 1].checked = true;
+  //   if (this.preferences.autoPay) {
+  //     timeout(() => {
+  //       const commitBtn = document.getElementsByName('commit')[0];
+  //       if (commitBtn) {
+  //         commitBtn.click();
+  //       }
+  //     }, checkoutDelay, 'Checking out');
+  //   }
   }
 }
